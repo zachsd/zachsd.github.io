@@ -6,9 +6,9 @@ description: This is a demo post that shows what you can do inside portfolio and
 featured_image: denver-logo.svg
 accent_color: '#4C60E6'
 gallery_images:
-  - carepoint-logo.svg
-  - denver-logo.svg
-  - ufc-logo.svg
+  - carepoint-logo.png
+  - denver-logo.png
+  - ufc-logo.png
 ---
 
 This page is a demo that shows everything you can do inside portfolio and blog posts.

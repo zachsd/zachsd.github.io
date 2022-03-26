@@ -56,13 +56,13 @@ GEM
     webrick (1.7.0)
 
 PLATFORMS
-  universal-darwin-21
+  arm64-darwin-21
 
 DEPENDENCIES
   jekyll (= 3.8.5)
   jekyll-paginate
   jekyll-sitemap
-  webrick
+  webrick (~> 1.7)
 
 BUNDLED WITH
    2.3.10
