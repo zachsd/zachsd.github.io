@@ -1,7 +1,7 @@
-site: Made Jekyll Theme
+site: Zach Davis
 
-url: 
-baseurl: 
+url: https://zachdavis.org
+# baseurl: 
 
 collections:
   pages:
