@@ -1,22 +1,22 @@
 basic_settings:
   site_title: Zach Davis
-  favicon_image: /images/favicon.png
+  favicon_image: /images/logo.png
 
 header_settings:
-  logo_image: 
-  logo_width: 100
+  logo_image: /images/logo.png
+  logo_width: 200
 
 menu_settings:
   menu_items:
-    - title: 'Projects'
-      url: '/'
-    - title: 'Blog'
+    - title: 'Experience'
       url: '/blog/'
+    - title: 'Skills'
+      url: '/'
 
 footer_settings:
-  logo_image: 
-  logo_width: 100
-  tagline: "'$more_coffee' == '$more_code' | ☕"
+  logo_image: /images/logo.png
+  logo_width: 50
+  tagline: "$more_coffee == $more_code | ☕"
 
 hero_settings:
   background_image: /images/backgrounds/background-hero.svg
@@ -25,11 +25,11 @@ post_settings:
   grid_spacing: 10
 
 contact_settings:
-  email_address: ''
+  email_address: 'z.stephen.davis@gmail.com'
   form_action: 'https://formspree.io/hello@jekyllthemes.io'
   confirmation_url: '/thanks'
   email_subject: 'Contact form submission'
-  send_button_text: 'Get in Touch'
+  send_button_text: 'Contact Me'
 
 social_settings:
   facebook_url: ''

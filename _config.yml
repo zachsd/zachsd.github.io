@@ -1,5 +1,4 @@
 site: Zach Davis
-
 url: https://zachdavis.org
 # baseurl: 
 
@@ -9,7 +8,7 @@ collections:
     permalink: /:name
   posts:
     output: true
-    permalink: /blog/:slug
+    permalink: /skills/:slug
   projects:
     output: true
     permalink: /project/:slug
@@ -58,4 +57,4 @@ plugins:
   - jekyll-sitemap
 
 paginate: 7
-paginate_path: "/blog/page-:num/"
+paginate_path: "/skills/page-:num/"
