@@ -22,9 +22,10 @@
   }
 
   .post__featured-image {
-    width: 100%;
-    max-width: 1440px;
-    margin: auto;
+    // width: 100%;
+    max-width: 80%;
+    max-height: 500px;
+    margin: 0 auto;
   }
 
   .post__content.highlight-first p:first-child {

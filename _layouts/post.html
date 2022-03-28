@@ -19,6 +19,14 @@ layout: default
 		<div class="wrap">
 
 			<article class="post__content {% if page.highlight_first %}highlight-first{% endif %}">
+				<h2>{{ page.position }}</h2>
+				<hr>
+				<p class="post__description">Manager:&#9;&#9;{{ page.supervisor }}
+					<br />
+					Address:&#9;&#9;{{ page.address }}
+					<br />
+					Dates:&#9;&#9;{{ page.start_date | date_to_long_string }} - {{ page.end_date | date_to_long_string}}
+				</p>
 				{{ page.content }}
 			</article>
 

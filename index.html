@@ -1,8 +1,8 @@
 ---
 layout: default
-overtitle: Building better systems, for work and fun. 
+overtitle: Building enterprise infrastructure, for work and fun. 
 title: Zachary S. Davis, System Architect
-description: Can't we run this in a container?...
+description: This one scales to 11!
 featured_image: /images/logo.png
 ---
 
@@ -26,6 +26,8 @@ featured_image: /images/logo.png
 		</div>
 	</section>
 
+	{% include section__about.html %}
+
 	<section class="listing">
 		<div class="wrap">
 
@@ -47,7 +49,7 @@ featured_image: /images/logo.png
 					<p class="project__description --small">
 						{{ project.description }}
 						<a href="{{ project.url | relative_url }}" class="project__link button--text --right"
-							style="color: {{ accent_color }}; --color-var: {{ accent_color }}">View Case Study</a>
+							style="color: {{ accent_color }}; --color-var: {{ accent_color }}">View this skill</a>
 					</p>
 				</div>
 			</article>
@@ -56,7 +58,7 @@ featured_image: /images/logo.png
 		</div>
 	</section>
 
-	{% include section__about.html %}
+	
 
 	<section class="recent-posts">
 		<div class="wrap grid">

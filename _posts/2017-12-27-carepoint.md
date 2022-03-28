@@ -7,10 +7,6 @@ address: 5600 S Quebec Street Suite 312A, Greenwood Village CO 80111
 supervisor: Susan Welton
 featured_image: '/images/carepoint-logo.svg'
 ---
-## {{ page.position }}
-### Manager: {{ page.supervisor }}
-#### Address: {{ page.address }}
-
 * Subject matter expert for all critical business systems and elevated supported for all services and applications.
 * Performed system redesigns to provide better availability of services and removed technical debt
 * Ensured systems and services meet or exceed HIPAA compliance standards.

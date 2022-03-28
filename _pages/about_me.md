@@ -1,2 +1,0 @@
-# Zachary S. Davis
-An accomplished Systems Architect actively working in the industry since 2010. Tireless in designing comprehensive solutions and development of infrastructure and architecture for software projects. Attentive collaborator and communicator from project conception to completion. Seasoned team leader possessing the technical and interpersonal skills to provide exceptional project deliverables. Dedicated to continued education with a true passions for the industry, habitually looking to expand current skills and learn new ones.

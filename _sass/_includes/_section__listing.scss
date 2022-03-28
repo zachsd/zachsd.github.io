@@ -198,7 +198,8 @@
     }
 
     .project__image {
-      width: 100%;
+      // max-width: 90%;
+      max-height: 300px;
     }
 
     .project__title {

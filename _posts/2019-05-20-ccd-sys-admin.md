@@ -7,10 +7,6 @@ address: 201 West Colfax Ave, Denver CO 80202
 supervisor: Marcus Danko
 featured_image: '/images/denver-logo.png'
 ---
-## {{ page.position }}
-### Manager: {{ page.supervisor }}
-#### Address: {{ page.address }}
-
 * Resolved issues and escalated problems with knowledgeable support and quality service.
 * Analyzed complex server issues and worked on large enterprise and business-critical applications.
 * Drafted training materials and organized training sessions for employees.
