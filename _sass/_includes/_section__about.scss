@@ -21,6 +21,12 @@
 
     img {
       margin-bottom: 24px;
+      border: solid $accent-color 5px;
+      border-radius: 100%;
+      background-color: linear-gradient( 90deg,
+        $accent-color,
+        black
+      );
     }
   }
 
