@@ -9,7 +9,7 @@ header_settings:
 menu_settings:
   menu_items:
     - title: 'Experience'
-      url: '/blog'
+      url: '/blog/'
     - title: 'Skills'
       url: '/#skills'
 
