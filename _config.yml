@@ -1,6 +1,6 @@
 site: Zach Davis
 url: https://zachdavis.org
-# baseurl: 
+# baseurl:
 
 collections:
   pages:
@@ -57,4 +57,4 @@ plugins:
   - jekyll-sitemap
 
 paginate: 7
-paginate_path: "/skills/page-:num/"
+paginate_path: "/blog/page-:num/"
