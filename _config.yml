@@ -8,7 +8,7 @@ collections:
     permalink: /:name
   posts:
     output: true
-    permalink: /skills/:slug
+    permalink: /blog/:slug
   projects:
     output: true
     permalink: /project/:slug
