@@ -1,23 +1,51 @@
 <section class="about">
-  {% if include.divider == true %}
-    <div class="wrap"><hr/></div>
+    {% if include.divider == true %}
+    <div class="wrap"><hr /></div>
     {% endif %}
-  <div class="wrap grid">
+    <div class="wrap grid">
+        <div class="about__image">
+            <img
+                id="profile-picture"
+                src="{{ '/images/profile.png' | relative_url }}"
+                alt="Profile Picture"
+            />
 
-    <div class="about__image">
-      <img id="profile-picture" src="{{ '/images/profile.png' | relative_url }}" alt="Profile Picture">
+            {% include component-socials.html %}
 
-      {% include component-socials.html %}
+        </div>
+
+        <div class="about__content">
+            <h2 class="title">Hello, I’m Zach, nice to meet you!</h2>
+            <p class="subtitle subtitle--light">
+                I’m a system architect with over 10 years of experience building
+                enterprise solutions.
+            </p>
+            <p>
+                An accomplished Systems Architect actively working in the
+                industry since 2010. Tireless in designing comprehensive
+                enterprise solutions and development of infrastructure and
+                architecture. Attentive collaborator and communicator from
+                project conception to completion. Seasoned team leader
+                possessing the technical and interpersonal skills to provide
+                exceptional project deliverables. Dedicated to continued
+                education with a true passion for the industry. Habitually
+                looking to expand current skills and learn new ones.
+            </p>
+            <p>
+                My skills include system design, site reliability engineering,
+                automation, root cause analysis, cloud and bare metal
+                infrastructure, infrastructure as code, and scripting. I’m
+                interested in clean aesthetics, resilient design, idempotent and
+                declarative platforms, orchestration, manageability, and efficient
+                infrastructure.
+            </p>
+            <p>
+                Looking for a system architect? I’d love to learn about your
+                company and current challenges, feel free to drop me some bits.
+            </p>
+            <a href="#" class="cta button--fill contact-trigger js-contact"
+                >Contact Me</a
+            >
+        </div>
     </div>
-
-    <div class="about__content">
-      <h2 class="title">Hello, I’m Zach, nice to meet you!</h2>
-      <p class="subtitle subtitle--light">I’m a system architect with over 10 years of experience building enterprise solutions.
-      </p>
-      <p>An accomplished Systems Architect actively working in the industry since 2010. Tireless in designing comprehensive solutions and development of infrastructure and architecture for software projects. Attentive collaborator and communicator from project conception to completion. Seasoned team leader possessing the technical and interpersonal skills to provide exceptional project deliverables. Dedicated to continued education with a true passions for the industry, habitually looking to expand current skills and learn new ones.</p>
-      <p>My skills include system design, site reliability engineering, automation, root cause analysis, cloud and bare metal infrastructure, infrastructure as code, and scripting. I’m interested in clean aesthetics, resilient design, idempotent and declarative platforms, orchestration, manageability, efficient infrastructure.</p>
-      <p>Looking for a system architect? I’d love to learn about your company and current challenges, feel free to drop me some bits.</p>
-      <a href="#" class="cta button--fill contact-trigger js-contact">Contact Me</a>
-    </div>
-  </div>
 </section>

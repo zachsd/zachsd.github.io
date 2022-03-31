@@ -9,7 +9,7 @@ featured_image: '/images/disctech.svg'
 ---
 * Recommended hardware solutions, explained features, options and costs to help customers make educated buying decisions.
 * Did extensive testing and research to familiarize myself with the company's offerings to better support the customers' needs.
-* Tested, refurbish, and labeled items to identify their resale value and warranty that the business could offer.
-* Performed system and network administrator tasks to manage and patch internal systems.
+* Tested, refurbished, and labeled items to identify their resale value and warranty that the business could offer.
+* Performed system and network administration tasks to manage and patch internal systems.
 * Configured and deployed an internal chat service that was later integrated with the businesses website to provide chat assistance to online customers.
 

@@ -10,7 +10,7 @@ gallery_images:
   - active-directory.svg
 tasks: 
  - Migrated users, computers, and services to a new forest while maintaining access across the environment during the transition. 
- - Managed and maintained multi domain and multi forest deployments
+ - Managed and maintained multi domain and multi forest deployments.
  - Optimized AD deployments to ensure reliable performance for remote sites.
  - Created and managed complex group policies with loopback processing, item level targeting, and broken inheritance. 
 ---
