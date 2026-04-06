@@ -17,7 +17,7 @@
 
   .tools__row {
     display: flex;
-    gap: 14px;
+    gap: 0;
     overflow: hidden;
     -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
     mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
@@ -32,10 +32,14 @@
 
   .tools__row--odd .tools__track {
     animation: tools-scroll-left var(--row-speed, 28s) linear infinite;
+    will-change: transform;
+    backface-visibility: hidden;
   }
 
   .tools__row--even .tools__track {
     animation: tools-scroll-right var(--row-speed, 28s) linear infinite;
+    will-change: transform;
+    backface-visibility: hidden;
   }
 
   .tools__row--one {
@@ -93,6 +97,10 @@
       gap: 20px;
     }
 
+    .tools__row {
+      gap: 0;
+    }
+
     .tools__chip {
       padding: 12px 20px;
     }
@@ -100,11 +108,11 @@
 }
 
 @keyframes tools-scroll-left {
-  from { transform: translateX(0); }
-  to { transform: translateX(-100%); }
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-100%, 0, 0); }
 }
 
 @keyframes tools-scroll-right {
-  from { transform: translateX(-100%); }
-  to { transform: translateX(0); }
+  from { transform: translate3d(-100%, 0, 0); }
+  to { transform: translate3d(0, 0, 0); }
 }
