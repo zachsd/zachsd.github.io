@@ -18,7 +18,7 @@ h6,
 .h6,
 .subtitle {
   font-family: $title-font;
-  color: $text-dark-color;
+  color: var(--theme-text-dark);
 }
 
 h1,
@@ -159,7 +159,7 @@ ol {
 
 blockquote {
   margin-top: 16px;
-  border-left: 2px solid $text-dark-color;
+  border-left: 2px solid var(--theme-text-dark);
   padding: 10px 0 10px 32px;
 
   p {
@@ -181,12 +181,12 @@ blockquote {
 
 a {
   text-decoration: none;
-  color: $text-dark-color;
+  color: var(--theme-text-dark);
   font-weight: $bold-weight;
   @include transition(all 120ms ease-in-out);
 
   &:hover {
-    color: $accent-color;
+    color: var(--theme-accent);
   }
 }
 
@@ -196,7 +196,7 @@ a {
   font-weight: $label-weight;
   line-height: $label-lineheight;
   letter-spacing: $label-spacing;
-  color: $text-light-color;
+  color: var(--theme-text-light);
   text-transform: uppercase;
 
   &--small {
@@ -208,7 +208,7 @@ a {
 
 label {
   @extend .label--small;
-  color: $text-dark-color;
+  color: var(--theme-text-dark);
 }
 
 .footnote {
@@ -232,10 +232,10 @@ code {
 }
 
 ::selection {
-  background: $accent-color;
-  color: $background-color;
+  background: var(--theme-accent);
+  color: var(--theme-bg);
 }
 ::-moz-selection {
-  background: $accent-color;
-  color: $background-color;
+  background: var(--theme-accent);
+  color: var(--theme-bg);
 }

@@ -1,0 +1,83 @@
+.tools {
+  margin: 0 0 120px;
+
+  .tools__header {
+    margin-bottom: 28px;
+
+    h2 {
+      margin-top: 10px;
+      max-width: 650px;
+    }
+  }
+
+  .tools__ticker {
+    display: grid;
+    gap: 14px;
+  }
+
+  .tools__row {
+    display: flex;
+    gap: 14px;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  }
+
+  .tools__track {
+    display: flex;
+    flex-shrink: 0;
+    gap: 14px;
+    min-width: 100%;
+  }
+
+  .tools__row--odd .tools__track {
+    animation: tools-scroll-left 24s linear infinite;
+  }
+
+  .tools__row--even .tools__track {
+    animation: tools-scroll-right 24s linear infinite;
+  }
+
+  .tools__chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    padding: 10px 16px;
+    border: 1px solid var(--theme-border);
+    border-radius: 999px;
+    background: var(--theme-surface);
+    color: var(--theme-text-dark);
+    font-weight: 500;
+
+    svg {
+      color: var(--theme-accent);
+      font-size: 16px;
+    }
+  }
+
+  @include mq(tabletp) {
+    .tools__ticker {
+      gap: 20px;
+    }
+
+    .tools__row,
+    .tools__track {
+      gap: 20px;
+    }
+
+    .tools__chip {
+      padding: 12px 20px;
+    }
+  }
+}
+
+@keyframes tools-scroll-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+@keyframes tools-scroll-right {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
