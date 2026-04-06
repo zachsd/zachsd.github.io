@@ -31,11 +31,26 @@
   }
 
   .tools__row--odd .tools__track {
-    animation: tools-scroll-left 24s linear infinite;
+    animation: tools-scroll-left var(--row-speed, 28s) linear infinite;
   }
 
   .tools__row--even .tools__track {
-    animation: tools-scroll-right 24s linear infinite;
+    animation: tools-scroll-right var(--row-speed, 28s) linear infinite;
+  }
+
+  .tools__row--one {
+    --row-speed: 30s;
+    padding-left: 4%;
+  }
+
+  .tools__row--two {
+    --row-speed: 24s;
+    padding-left: 1%;
+  }
+
+  .tools__row--three {
+    --row-speed: 34s;
+    padding-left: 7%;
   }
 
   .tools__chip {
@@ -54,6 +69,11 @@
       color: var(--theme-accent);
       font-size: 16px;
     }
+  }
+
+
+  .tools__row:hover .tools__track {
+    animation-play-state: paused;
   }
 
   @include mq(tabletp) {
