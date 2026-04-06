@@ -1,22 +1,22 @@
 ---
-title: Active Directory
-subtitle: The industry standard Directory Services platform. 
-date: 1970-01-06 00:00:00
+title: Security & Compliance
+subtitle: Identity, access, and controls for regulated environments.
+date: 1970-01-05 00:00:00
 description: |
-  Active Directory has unanimously been the directory services choice at nearly ever organization I've worked at. I've managed and created many topologies and have continuously been selected as the AD subject matter expert. 
+  Delivered identity and security architecture aligned to compliance requirements while improving operational security posture.
 featured_image: active-directory.svg
 accent_color: '#4C60E6'
 gallery_images:
   - active-directory.svg
-tasks: 
- - Migrated users, computers, and services to a new forest while maintaining access across the environment during the transition. 
- - Managed and maintained multi domain and multi forest deployments.
- - Optimized AD deployments to ensure reliable performance for remote sites.
- - Created and managed complex group policies with loopback processing, item level targeting, and broken inheritance. 
+tasks:
+  - Integrated Active Directory and Azure Entra identity models for enterprise access control.
+  - Implemented IAM, SAML, and OpenID patterns for secure authentication and authorization.
+  - Supported regulated delivery models aligned with CJIS, HIPAA, and PCI DSS controls.
+  - Embedded DevSecOps guardrails into CI/CD and infrastructure workflows.
 ---
  {{ page.description }}
 
-## What I've done with {{ page.title | capitalize }}:
+## What I've done with {{ page.title }}:
 {% for task in page.tasks %}
 > {{ task }}
 {% endfor %}

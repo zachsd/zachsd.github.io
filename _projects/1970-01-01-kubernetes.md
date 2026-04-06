@@ -1,20 +1,21 @@
 ---
-title: Kubernetes
-subtitle: The de-facto container orchestration platform.  
-date: 1970-01-04 00:00:00
+title: Cloud & Distributed Systems
+subtitle: Multi-region architecture across cloud and hybrid estates.
+date: 1970-01-08 00:00:00
 description: |
-  Kubernetes needs no introductions as it’s been grabbing the headlines of every tech article for the past few years. This graduated CNCF project is changing the pace of what we can build and deploy in today’s landscape. Kubernetes has become the de facto container orchestration platform.
+  Built distributed cloud foundations that support resilient application delivery across regions, accounts, and on-prem integration points.
 featured_image: kubernetes-logo.svg
 accent_color: '#4C60E6'
 gallery_images:
   - kubernetes-logo.svg
-tasks: 
- - Deployed multiple types of k8s clusters including EKS, RKE, k3s and bootstrapped clusters on bare metal, virtual machines, and raspberry pi's
- - Against all odds, successfully containerized and deployed legacy applications.  
+tasks:
+  - Implemented AWS multi-region and multi-account landing zones for workload isolation.
+  - Designed VPC architectures with segmented network boundaries and shared services patterns.
+  - Integrated hybrid environments spanning cloud infrastructure and existing enterprise systems.
 ---
  {{ page.description }}
 
-## What I've done with {{ page.title | capitalize }}:
+## What I've done with {{ page.title }}:
 {% for task in page.tasks %}
 > {{ task }}
 {% endfor %}

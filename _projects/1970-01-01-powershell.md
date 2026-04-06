@@ -1,20 +1,21 @@
 ---
-title: PowerShell
-subtitle: The everything Windows scripting platform.
-date: 1970-01-03 00:00:00
+title: Languages
+subtitle: Automation and platform engineering through scripting and code.
+date: 1970-01-06 00:00:00
 description: |
-  Microsoft has been building PowerShell interfaces for nearly every product offering they have. That means almost anything that needs to be done on the Microsoft stack is PowerShell-able.
+  Used pragmatic, multi-language automation to connect systems, APIs, and platforms into maintainable operational workflows.
 featured_image: powershell-logo.svg
 accent_color: '#4C60E6'
 gallery_images:
   - powershell-logo.svg
-tasks: 
- - Created numerous modules and scripts for managing network interfaces, routes, Active Directory objects, patches, and settings on fleets of servers. 
- - Automated complex processes involving multiple products from the Microsoft stack.
- - Created wrappers around legacy cli tools to ingest data in a native powershell way. 
+tasks:
+  - Built orchestration tooling with Python, Bash, and PowerShell for cross-platform operations.
+  - Implemented automation and glue code in JavaScript for service integration and developer workflows.
+  - Standardized platform configuration and data exchange formats with YAML and JSON.
 ---
  {{ page.description }}
-## What I've done with {{ page.title | capitalize }}:
+
+## What I've done with {{ page.title }}:
 {% for task in page.tasks %}
 > {{ task }}
 {% endfor %}
