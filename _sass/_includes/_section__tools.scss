@@ -27,7 +27,7 @@
     display: flex;
     flex-shrink: 0;
     gap: 14px;
-    min-width: 100%;
+    min-width: max-content;
   }
 
   .tools__row--odd .tools__track {
@@ -39,18 +39,15 @@
   }
 
   .tools__row--one {
-    --row-speed: 30s;
-    padding-left: 4%;
+    --row-speed: 33s;
   }
 
   .tools__row--two {
-    --row-speed: 24s;
-    padding-left: 1%;
+    --row-speed: 27s;
   }
 
   .tools__row--three {
-    --row-speed: 34s;
-    padding-left: 7%;
+    --row-speed: 36s;
   }
 
   .tools__chip {
@@ -69,6 +66,16 @@
       color: var(--theme-accent);
       font-size: 16px;
     }
+
+
+    &--group {
+      background: var(--theme-accent);
+      color: #fff;
+      border-color: transparent;
+      font-weight: 700;
+    }
+
+
   }
 
 
