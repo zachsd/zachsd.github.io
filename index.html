@@ -131,65 +131,59 @@ featured_image: /images/logo.png
 		</div>
 	</section>
 
-	<section id="skills" class="skills-scroll" aria-labelledby="skills-title">
+	<section id="skills" class="skills-premium" aria-labelledby="skills-title">
 		<div class="wrap">
-			<header class="tools__header">
+			<header class="skills-premium__header">
 				<p class="label">Skills</p>
-				<h2 id="skills-title">Experience combinations, shown directly on this page.</h2>
+				<h2 id="skills-title">Built as integrated capabilities, not isolated tools.</h2>
 			</header>
-			<div class="tools__ticker" aria-hidden="true">
-				<div class="tools__row tools__row--odd tools__row--one">
-					<div class="tools__track">
-						<span class="tools__chip tools__chip--group">AI / ML Infrastructure</span>
-						<span class="tools__chip">GPU compute (NVIDIA DGX), LLM inference, model deployment, distributed inference.</span>
-						<span class="tools__chip tools__chip--group">Cloud & Distributed Systems</span>
-						<span class="tools__chip">AWS multi-region and multi-account patterns, VPC design, hybrid environments.</span>
-					</div>
-					<div class="tools__track" aria-hidden="true">
-						<span class="tools__chip tools__chip--group">AI / ML Infrastructure</span>
-						<span class="tools__chip">GPU compute (NVIDIA DGX), LLM inference, model deployment, distributed inference.</span>
-						<span class="tools__chip tools__chip--group">Cloud & Distributed Systems</span>
-						<span class="tools__chip">AWS multi-region and multi-account patterns, VPC design, hybrid environments.</span>
-					</div>
-				</div>
 
-				<div class="tools__row tools__row--even tools__row--two">
-					<div class="tools__track">
-						<span class="tools__chip tools__chip--group">Platform Engineering</span>
-						<span class="tools__chip">Internal developer platforms, self-service infrastructure, and golden paths.</span>
-						<span class="tools__chip tools__chip--group">Infrastructure as Code</span>
-						<span class="tools__chip">Terraform modular design, Ansible automation, CloudFormation integration.</span>
-					</div>
-					<div class="tools__track" aria-hidden="true">
-						<span class="tools__chip tools__chip--group">Platform Engineering</span>
-						<span class="tools__chip">Internal developer platforms, self-service infrastructure, and golden paths.</span>
-						<span class="tools__chip tools__chip--group">Infrastructure as Code</span>
-						<span class="tools__chip">Terraform modular design, Ansible automation, CloudFormation integration.</span>
-					</div>
-				</div>
-
-				<div class="tools__row tools__row--odd tools__row--three">
-					<div class="tools__track">
-						<span class="tools__chip tools__chip--group">CI/CD & GitOps</span>
-						<span class="tools__chip">Azure DevOps, GitHub Actions, GitLab CI, and GitOps workflows.</span>
-						<span class="tools__chip tools__chip--group">Security & Compliance</span>
-						<span class="tools__chip">AD, Entra, IAM, SAML/OpenID, CJIS/HIPAA/PCI DSS, DevSecOps.</span>
-						<span class="tools__chip tools__chip--group">Languages & Orchestration</span>
-						<span class="tools__chip">Python, Bash, PowerShell, JavaScript, YAML/JSON, Kubernetes, Helm, GPU scheduling.</span>
-						<span class="tools__chip tools__chip--group">Observability</span>
-						<span class="tools__chip">Prometheus, Grafana, Alertmanager, and performance tuning.</span>
-					</div>
-					<div class="tools__track" aria-hidden="true">
-						<span class="tools__chip tools__chip--group">CI/CD & GitOps</span>
-						<span class="tools__chip">Azure DevOps, GitHub Actions, GitLab CI, and GitOps workflows.</span>
-						<span class="tools__chip tools__chip--group">Security & Compliance</span>
-						<span class="tools__chip">AD, Entra, IAM, SAML/OpenID, CJIS/HIPAA/PCI DSS, DevSecOps.</span>
-						<span class="tools__chip tools__chip--group">Languages & Orchestration</span>
-						<span class="tools__chip">Python, Bash, PowerShell, JavaScript, YAML/JSON, Kubernetes, Helm, GPU scheduling.</span>
-						<span class="tools__chip tools__chip--group">Observability</span>
-						<span class="tools__chip">Prometheus, Grafana, Alertmanager, and performance tuning.</span>
-					</div>
-				</div>
+			<div class="skills-premium__grid">
+				<article class="skill-card">
+					<h3>AI / ML Infrastructure</h3>
+					<p class="skill-card__tools">GPU compute (NVIDIA DGX), LLM inference, model deployment, distributed inference.</p>
+					<p>Designed GPU-backed environments that support reliable model rollout and high-throughput inference services, with distributed serving patterns for production scale.</p>
+				</article>
+				<article class="skill-card">
+					<h3>Cloud & Distributed Systems</h3>
+					<p class="skill-card__tools">AWS (multi-region, multi-account), VPC architectures, hybrid environments.</p>
+					<p>Delivered cloud foundations across regions and accounts with strong network segmentation, while integrating hybrid connectivity for enterprise platform workloads.</p>
+				</article>
+				<article class="skill-card">
+					<h3>Platform Engineering</h3>
+					<p class="skill-card__tools">Internal developer platforms, self-service infrastructure, golden paths.</p>
+					<p>Built internal platforms that reduce delivery friction, providing self-service infrastructure workflows and opinionated golden paths for faster, safer releases.</p>
+				</article>
+				<article class="skill-card">
+					<h3>Infrastructure as Code</h3>
+					<p class="skill-card__tools">Terraform (modular design), Ansible, CloudFormation.</p>
+					<p>Implemented reusable IaC modules and automated configuration layers that make infrastructure consistent, auditable, and repeatable across environments.</p>
+				</article>
+				<article class="skill-card">
+					<h3>CI/CD & GitOps</h3>
+					<p class="skill-card__tools">Azure DevOps, GitHub Actions, GitLab CI, GitOps workflows.</p>
+					<p>Built delivery pipelines with policy checks, staged promotion, and GitOps operating models to improve release confidence and shorten feedback loops.</p>
+				</article>
+				<article class="skill-card">
+					<h3>Languages</h3>
+					<p class="skill-card__tools">Python, Bash, PowerShell, JavaScript, YAML, JSON.</p>
+					<p>Used cross-platform scripting and API integration to automate operations, connect systems, and standardize configuration and runtime workflows.</p>
+				</article>
+				<article class="skill-card">
+					<h3>Containers & Orchestration</h3>
+					<p class="skill-card__tools">Kubernetes (EKS, OpenShift), Helm, GPU-aware scheduling.</p>
+					<p>Operated Kubernetes platforms for both general application workloads and accelerated compute, using Helm-based release patterns and GPU scheduling controls.</p>
+				</article>
+				<article class="skill-card">
+					<h3>Observability</h3>
+					<p class="skill-card__tools">Prometheus, Grafana, Alertmanager, performance tuning.</p>
+					<p>Implemented observability stacks that improve signal quality, accelerate incident triage, and guide performance tuning through data-driven optimization.</p>
+				</article>
+				<article class="skill-card">
+					<h3>Security & Compliance</h3>
+					<p class="skill-card__tools">Active Directory, Azure Entra, IAM, SAML, OpenID, CJIS, HIPAA, PCI DSS, DevSecOps.</p>
+					<p>Designed identity and security patterns aligned with regulated standards while embedding controls and DevSecOps guardrails into platform delivery.</p>
+				</article>
 			</div>
 		</div>
 	</section>
