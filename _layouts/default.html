@@ -73,6 +73,7 @@
 
 <body class="loading{% if site.data.settings.advanced_settings.ajax_loading == true %} ajax-loading{% endif %}"
 	data-site-url="{{ site.url }}" data-page-url="{{ page.url | replace: 'index.html', '' }}">
+	<canvas id="particle-background" aria-hidden="true"></canvas>
 
 
 	{% include header.html %}
@@ -122,6 +123,7 @@
 	<script src="{{ '/js/plugins-min.js' | relative_url }}"></script>
 	<script src="{{ '/js/made-min.js' | relative_url }}"></script>
 	<script src="{{ '/js/theme-toggle.js' | relative_url }}"></script>
+	<script src="{{ '/js/particle-background.js' | relative_url }}"></script>
 
 	{% if site.data.settings.advanced_settings.footer_js %}
 	<!-- Extra Footer JS Code -->
