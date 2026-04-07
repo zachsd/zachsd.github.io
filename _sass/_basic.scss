@@ -46,17 +46,18 @@ body {
 
 #particle-background {
 	position: fixed;
-	inset: 0;
+	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
 	z-index: -1;
 	pointer-events: none;
-	opacity: 0.45;
+	opacity: 0.72;
 	transition: opacity 0.25s ease-in-out;
 }
 
 html[data-theme="light"] #particle-background {
-	opacity: 0.3;
+	opacity: 0.48;
 }
 
 hr {

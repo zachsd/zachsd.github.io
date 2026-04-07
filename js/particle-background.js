@@ -11,6 +11,8 @@
 	var particleCount = 0;
 	var dpi = Math.max(window.devicePixelRatio || 1, 1);
 	var maxDistance = 140;
+	var worldHeight = 0;
+	var parallaxFactor = 0.7;
 
 	function hexToRgb(hex) {
 		var normalized = hex.replace("#", "");
@@ -35,6 +37,11 @@
 		var width = window.innerWidth;
 		var height = window.innerHeight;
 		dpi = Math.max(window.devicePixelRatio || 1, 1);
+		worldHeight = Math.max(
+			document.documentElement.scrollHeight,
+			document.body.scrollHeight,
+			height
+		);
 
 		canvas.width = Math.floor(width * dpi);
 		canvas.height = Math.floor(height * dpi);
@@ -42,9 +49,9 @@
 		canvas.style.height = height + "px";
 		context.setTransform(dpi, 0, 0, dpi, 0, 0);
 
-		particleCount = Math.max(22, Math.floor((width * height) / 38000));
-		maxDistance = Math.max(110, Math.min(170, width * 0.12));
-		seedParticles(width, height);
+		particleCount = Math.max(36, Math.floor((width * height) / 23000));
+		maxDistance = Math.max(130, Math.min(210, width * 0.16));
+		seedParticles(width, worldHeight);
 	}
 
 	function randomVelocity() {
@@ -59,7 +66,7 @@
 				y: Math.random() * height,
 				vx: randomVelocity(),
 				vy: randomVelocity(),
-				radius: 0.7 + Math.random() * 1.8
+				radius: 1.1 + Math.random() * 2.2
 			});
 		}
 	}
@@ -68,6 +75,7 @@
 		var width = window.innerWidth;
 		var height = window.innerHeight;
 		var color = getThemeParticleColor();
+		var scrollTop = window.scrollY || window.pageYOffset || 0;
 
 		context.clearRect(0, 0, width, height);
 
@@ -78,12 +86,16 @@
 
 			if (particle.x < -10) particle.x = width + 10;
 			if (particle.x > width + 10) particle.x = -10;
-			if (particle.y < -10) particle.y = height + 10;
-			if (particle.y > height + 10) particle.y = -10;
+			if (particle.y < -10) particle.y = worldHeight + 10;
+			if (particle.y > worldHeight + 10) particle.y = -10;
+
+			var renderY = particle.y - scrollTop * parallaxFactor;
+			var renderX = particle.x;
+			if (renderY < -20 || renderY > height + 20) continue;
 
 			context.beginPath();
-			context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-			context.fillStyle = "rgba(" + color.r + "," + color.g + "," + color.b + ",0.22)";
+			context.arc(renderX, renderY, particle.radius, 0, Math.PI * 2);
+			context.fillStyle = "rgba(" + color.r + "," + color.g + "," + color.b + ",0.34)";
 			context.fill();
 		}
 
@@ -92,14 +104,17 @@
 				var dx = particles[a].x - particles[b].x;
 				var dy = particles[a].y - particles[b].y;
 				var distance = Math.sqrt(dx * dx + dy * dy);
+				var ay = particles[a].y - scrollTop * parallaxFactor;
+				var by = particles[b].y - scrollTop * parallaxFactor;
+				if ((ay < -30 && by < -30) || (ay > height + 30 && by > height + 30)) continue;
 
 				if (distance < maxDistance) {
-					var opacity = (1 - distance / maxDistance) * 0.15;
+					var opacity = (1 - distance / maxDistance) * 0.28;
 					context.beginPath();
-					context.moveTo(particles[a].x, particles[a].y);
-					context.lineTo(particles[b].x, particles[b].y);
+					context.moveTo(particles[a].x, ay);
+					context.lineTo(particles[b].x, by);
 					context.strokeStyle = "rgba(" + color.r + "," + color.g + "," + color.b + "," + opacity + ")";
-					context.lineWidth = 0.7;
+					context.lineWidth = 0.9;
 					context.stroke();
 				}
 			}
@@ -133,6 +148,7 @@
 	}
 
 	window.addEventListener("resize", resizeCanvas, { passive: true });
+	window.addEventListener("load", resizeCanvas);
 	prefersReducedMotion.addEventListener("change", updateMotionPreference);
 	document.addEventListener("visibilitychange", function () {
 		if (document.hidden) {
