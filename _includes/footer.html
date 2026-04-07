@@ -12,10 +12,19 @@
 		{% endif %}
 
 		<div class="footer__copyright">
+			<div class="code-terminal" id="coffee-code-terminal" role="img" aria-label="Animated terminal showing coffee to code snippets in Python, PowerShell, JavaScript, and Bash.">
+				<div class="code-terminal__tabs" aria-hidden="true">
+					<span class="code-terminal__tab code-terminal__tab--shell">› zsh</span>
+					<span class="code-terminal__tab code-terminal__tab--folder"><i class="fas fa-folder-open"></i> ~/lab</span>
+					<span class="code-terminal__tab code-terminal__tab--time"><i class="fas fa-laptop-code"></i> 32ms</span>
+				</div>
+				<div class="code-terminal__screen" id="coffee-code-screen"></div>
+			</div>
 			{% if site.data.settings.footer_settings.tagline %}
-			<p>{{ site.data.settings.footer_settings.tagline }}</p>
+			<p class="footer__tagline-fallback">{{ site.data.settings.footer_settings.tagline }}</p>
 			{% endif %}
 			<span class="footnote">© {{ 'now' | date: "%Y" }} {{ site.data.settings.basic_settings.site_title }}</span>
 		</div>
 
 	</div>
+</footer>
