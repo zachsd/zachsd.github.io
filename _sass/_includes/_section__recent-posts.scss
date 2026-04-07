@@ -23,7 +23,7 @@
     display: flex;
     align-items: center;
     margin-bottom: 40px;
-    min-height: 380px;
+    min-height: 430px;
     width: 100%;
   }
 
@@ -31,7 +31,7 @@
     --timeline-center: 50%;
     --line-thickness: 4px;
     position: relative;
-    flex: var(--duration) 1 0;
+    flex: 1 1 0;
     min-width: 0;
     display: block;
     color: inherit;
@@ -79,8 +79,8 @@
   .experience-timeline__card {
     position: relative;
     z-index: 2;
-    width: min(180px, calc(100% - 16px));
-    min-height: 150px;
+    width: 220px;
+    min-height: 170px;
     margin-left: auto;
     margin-right: auto;
     padding: 16px;
@@ -108,7 +108,7 @@
 
   .experience-timeline__item.is-top {
     .experience-timeline__card {
-      margin-bottom: 150px;
+      margin-bottom: 170px;
       animation: timeline-bob-top 6s ease-in-out infinite;
     }
 
@@ -116,9 +116,9 @@
       content: "";
       position: absolute;
       left: 50%;
-      top: calc(var(--timeline-center) - 95px);
+      top: calc(var(--timeline-center) - 112px);
       width: 2px;
-      height: 86px;
+      height: 102px;
       transform: translateX(-50%);
       background: linear-gradient(180deg, color-mix(in srgb, var(--item-color) 65%, #fff), var(--item-color));
       z-index: 1;
@@ -127,7 +127,7 @@
 
   .experience-timeline__item.is-bottom {
     .experience-timeline__card {
-      margin-top: 150px;
+      margin-top: 170px;
       animation: timeline-bob-bottom 6s ease-in-out infinite;
     }
 
@@ -137,7 +137,7 @@
       left: 50%;
       top: calc(var(--timeline-center) + 10px);
       width: 2px;
-      height: 86px;
+      height: 102px;
       transform: translateX(-50%);
       background: linear-gradient(180deg, var(--item-color), color-mix(in srgb, var(--item-color) 65%, #fff));
       z-index: 1;
@@ -169,17 +169,17 @@
     .experience-timeline {
       overflow-x: auto;
       overflow-y: hidden;
-      min-height: 360px;
+      min-height: 400px;
       padding-bottom: 8px;
       scroll-snap-type: x proximity;
 
       .experience-timeline__item {
-        flex: 0 0 220px;
+        flex: 0 0 244px;
         scroll-snap-align: center;
       }
 
       .experience-timeline__card {
-        width: 196px;
+        width: 220px;
       }
     }
   }
