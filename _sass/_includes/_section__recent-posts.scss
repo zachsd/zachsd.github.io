@@ -23,7 +23,7 @@
     display: grid;
     gap: 28px;
     margin: 0 auto 40px;
-    max-width: 980px;
+    max-width: 1200px;
 
     &::before {
       content: "";
@@ -44,7 +44,7 @@
     display: block;
     color: inherit;
     text-decoration: none;
-    width: calc(50% - 34px);
+    width: calc(50% - 24px);
 
     &:hover,
     &:focus {
@@ -65,8 +65,8 @@
         content: "";
         position: absolute;
         top: 50%;
-        right: -34px;
-        width: 34px;
+        right: -24px;
+        width: 24px;
         height: 2px;
         transform: translateY(-50%);
         background: color-mix(in srgb, var(--theme-border) 65%, var(--theme-text-medium));
@@ -80,8 +80,8 @@
         content: "";
         position: absolute;
         top: 50%;
-        left: -34px;
-        width: 34px;
+        left: -24px;
+        width: 24px;
         height: 2px;
         transform: translateY(-50%);
         background: color-mix(in srgb, var(--theme-border) 65%, var(--theme-text-medium));
@@ -92,7 +92,7 @@
   .experience-timeline__dot {
     position: absolute;
     top: 50%;
-    left: calc(100% + 34px);
+    left: calc(100% + 24px);
     width: 18px;
     height: 18px;
     transform: translate(-50%, -50%);
@@ -105,7 +105,7 @@
   }
 
   .experience-timeline__item.is-right .experience-timeline__dot {
-    left: -34px;
+    left: -24px;
   }
 
   .experience-timeline__card {
