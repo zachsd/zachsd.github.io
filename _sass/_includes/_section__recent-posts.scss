@@ -23,7 +23,7 @@
     display: grid;
     gap: 28px;
     margin: 0 auto 40px;
-    max-width: 1200px;
+    max-width: 1500px;
 
     &::before {
       content: "";
@@ -109,6 +109,7 @@
   }
 
   .experience-timeline__card {
+    width: min(440px, 100%);
     padding: 16px;
     border-radius: 14px;
     border: 1px solid var(--theme-border);
@@ -125,12 +126,20 @@
 
   .experience-timeline__title {
     margin-bottom: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.35;
   }
 
   .experience-timeline__role {
     margin: 0;
     color: var(--theme-text-medium);
     font-size: 0.95em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.35;
   }
 
   .action-bottom {
