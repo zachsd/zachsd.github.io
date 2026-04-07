@@ -40,6 +40,24 @@ body {
 	color: var(--theme-text-dark);
 	-webkit-font-smoothing: antialiased;
 	overflow-x: hidden;
+	position: relative;
+	z-index: 0;
+}
+
+#particle-background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	pointer-events: none;
+	opacity: 0.86;
+	transition: opacity 0.25s ease-in-out;
+}
+
+html[data-theme="light"] #particle-background {
+	opacity: 0.62;
 }
 
 hr {
