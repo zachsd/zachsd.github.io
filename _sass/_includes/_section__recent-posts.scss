@@ -31,7 +31,7 @@
       top: 8px;
       bottom: 8px;
       left: 50%;
-      width: 3px;
+      width: 2%;
       transform: translateX(-50%);
       background: linear-gradient(180deg, #4c60e6, #9b45de 35%, #0fb9d8 70%, #20c997);
       border-radius: 999px;
@@ -44,7 +44,7 @@
     display: block;
     color: inherit;
     text-decoration: none;
-    width: calc(50% - 14px);
+    width: calc(60% - 0px);
 
     &:hover,
     &:focus {
