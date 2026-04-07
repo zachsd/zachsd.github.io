@@ -49,8 +49,8 @@
 		canvas.style.height = height + "px";
 		context.setTransform(dpi, 0, 0, dpi, 0, 0);
 
-		particleCount = Math.max(36, Math.floor((width * height) / 23000));
-		maxDistance = Math.max(130, Math.min(210, width * 0.16));
+		particleCount = Math.max(60, Math.floor((width * height) / 15000));
+		maxDistance = Math.max(150, Math.min(240, width * 0.18));
 		seedParticles(width, worldHeight);
 	}
 
@@ -66,7 +66,7 @@
 				y: Math.random() * height,
 				vx: randomVelocity(),
 				vy: randomVelocity(),
-				radius: 1.1 + Math.random() * 2.2
+				radius: 1.8 + Math.random() * 2.6
 			});
 		}
 	}
@@ -95,7 +95,7 @@
 
 			context.beginPath();
 			context.arc(renderX, renderY, particle.radius, 0, Math.PI * 2);
-			context.fillStyle = "rgba(" + color.r + "," + color.g + "," + color.b + ",0.34)";
+			context.fillStyle = "rgba(" + color.r + "," + color.g + "," + color.b + ",0.48)";
 			context.fill();
 		}
 
@@ -109,12 +109,12 @@
 				if ((ay < -30 && by < -30) || (ay > height + 30 && by > height + 30)) continue;
 
 				if (distance < maxDistance) {
-					var opacity = (1 - distance / maxDistance) * 0.28;
+					var opacity = (1 - distance / maxDistance) * 0.42;
 					context.beginPath();
 					context.moveTo(particles[a].x, ay);
 					context.lineTo(particles[b].x, by);
 					context.strokeStyle = "rgba(" + color.r + "," + color.g + "," + color.b + "," + opacity + ")";
-					context.lineWidth = 0.9;
+					context.lineWidth = 1.35;
 					context.stroke();
 				}
 			}

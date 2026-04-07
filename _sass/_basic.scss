@@ -52,12 +52,12 @@ body {
 	height: 100%;
 	z-index: -1;
 	pointer-events: none;
-	opacity: 0.72;
+	opacity: 0.86;
 	transition: opacity 0.25s ease-in-out;
 }
 
 html[data-theme="light"] #particle-background {
-	opacity: 0.48;
+	opacity: 0.62;
 }
 
 hr {
