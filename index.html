@@ -220,8 +220,11 @@ featured_image: /images/logo.png
 						<span class="experience-timeline__dot" aria-hidden="true"></span>
 						<div class="experience-timeline__card">
 							<time class="experience-timeline__date label--small">{{ post.start_date | date: "%b %Y" }} - {% if post.end_date %}{{ post.end_date | date: "%b %Y" }}{% else %}Present{% endif %}</time>
-							<h5 class="experience-timeline__title subtitle">{{ post.title }}</h5>
-							<p class="experience-timeline__role">{{ post.position }}</p>
+							<p class="experience-timeline__role experience-timeline__role--primary">{{ post.position }}</p>
+							<div class="experience-timeline__details">
+								<h5 class="experience-timeline__title subtitle">{{ post.title }}</h5>
+								<p class="experience-timeline__role">{{ post.position }}</p>
+							</div>
 						</div>
 					</a>
 				{% endfor %}

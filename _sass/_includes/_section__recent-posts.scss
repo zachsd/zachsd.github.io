@@ -24,7 +24,9 @@
     align-items: center;
     margin-bottom: 40px;
     min-height: 430px;
-    width: 100%;
+    width: calc(100% + clamp(80px, 14vw, 260px));
+    margin-left: calc(clamp(80px, 14vw, 260px) / -2);
+    overflow: visible;
   }
 
   .experience-timeline__item {
@@ -46,6 +48,18 @@
 
       .experience-timeline__card {
         border-color: var(--item-color);
+        width: 220px;
+        min-height: 170px;
+      }
+
+      .experience-timeline__details {
+        max-height: 130px;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .experience-timeline__role--primary {
+        margin-bottom: 8px;
       }
     }
   }
@@ -79,16 +93,16 @@
   .experience-timeline__card {
     position: relative;
     z-index: 2;
-    width: 220px;
-    min-height: 170px;
+    width: 170px;
+    min-height: 104px;
     margin-left: auto;
     margin-right: auto;
-    padding: 16px;
+    padding: 14px;
     border-radius: 14px;
     border: 1px solid color-mix(in srgb, var(--item-color) 45%, var(--theme-border));
     background: linear-gradient(180deg, color-mix(in srgb, var(--item-color) 12%, var(--theme-surface)), var(--theme-surface) 70%);
     box-shadow: 0 10px 22px color-mix(in srgb, var(--theme-text-dark) 10%, transparent);
-    transition: border-color 0.2s ease;
+    transition: border-color 0.2s ease, width 0.25s ease, min-height 0.25s ease;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -104,6 +118,21 @@
     margin: 0;
     color: var(--theme-text-medium);
     font-size: 0.95em;
+  }
+
+  .experience-timeline__role--primary {
+    color: var(--theme-text);
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+
+  .experience-timeline__details {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(4px);
+    transition: max-height 0.25s ease, opacity 0.2s ease, transform 0.2s ease;
   }
 
   .experience-timeline__item.is-top {
@@ -167,6 +196,8 @@
 
   @media only screen and (max-width: #{$break-tabletp - 1}) {
     .experience-timeline {
+      width: 100%;
+      margin-left: 0;
       overflow-x: auto;
       overflow-y: hidden;
       min-height: 400px;
@@ -180,6 +211,17 @@
 
       .experience-timeline__card {
         width: 220px;
+        min-height: 170px;
+      }
+
+      .experience-timeline__details {
+        max-height: 130px;
+        opacity: 1;
+        transform: none;
+      }
+
+      .experience-timeline__role--primary {
+        display: none;
       }
     }
   }
