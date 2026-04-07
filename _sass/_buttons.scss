@@ -13,14 +13,14 @@
     line-height: 18px;
     display: inline-block;
     font-size: 13px;
-    color: $text-dark-color;
+    color: var(--theme-text-dark);
     font-weight: $button-weight;
     letter-spacing: $button-spacing;
     text-transform: uppercase;
     cursor: pointer;
 
     &.--right {
-      --color-var: #{$text-dark-color};
+      --color-var: var(--theme-text-dark);
 
       &::after {
         content: "";
@@ -40,7 +40,7 @@
     }
 
     &.--left {
-      --color-var: #{$text-dark-color};
+      --color-var: var(--theme-text-dark);
 
       &::before {
         content: "";
@@ -62,23 +62,23 @@
 
     &--accent {
       @extend .button--text;
-      color: $accent-color;
+      color: var(--theme-accent);
 
       &.--right::after,
       &.--left::before {
-        background-color: $accent-color;
+        background-color: var(--theme-accent);
       }
     }
 
     &:hover {
-      color: $accent-color;
+      color: var(--theme-accent);
     }
   }
 
   &--fill {
     @extend .button--text;
     color: white;
-    background-color: $accent-color;
+    background-color: var(--theme-accent);
     padding: 13px 20px 14px;
     border-radius: 40px;
 

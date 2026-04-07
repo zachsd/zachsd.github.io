@@ -23,7 +23,7 @@
     font-weight: $sitetitle-weight;
     letter-spacing: $sitetitle-spacing;
     line-height: 1;
-    color: $text-dark-color;
+    color: var(--theme-text-dark);
 
     @include mq(tabletp) {
       font-size: $sitetitle-medium;
@@ -34,7 +34,7 @@
     }
 
     &:hover {
-      color: $accent-color;
+      color: var(--theme-accent);
     }
   }
 
@@ -43,7 +43,7 @@
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    background-color: white;
+    background-color: var(--theme-bg);
     position: fixed;
     top: 10px;
     left: 0;
@@ -64,7 +64,7 @@
     padding: 64px 0;
 
     .wrap {
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: auto auto 1fr auto;
     }
 
     .header__menu {
@@ -72,7 +72,7 @@
       height: initial;
       position: relative;
       background-color: none;
-      justify-self: center;
+      justify-self: end;
       opacity: 1;
       visibility: visible;
       top: 0;
@@ -183,12 +183,12 @@
     text-transform: none;
 
     &.active-link {
-      color: $accent-color;
+      color: var(--theme-accent);
     }
   }
 
   .menu__cta__link {
-    color: $accent-color;
+    color: var(--theme-accent);
   }
 
   @include mq(tabletp) {
@@ -207,7 +207,7 @@
       font-size: 14px;
       line-height: 18px;
       display: inline-block;
-      color: $text-dark-color;
+      color: var(--theme-text-dark);
       font-weight: $button-weight;
       letter-spacing: $button-spacing;
       text-transform: uppercase;
@@ -216,5 +216,35 @@
     .menu__cta__link {
       display: none;
     }
+  }
+}
+
+.theme-toggle {
+  justify-self: end;
+  align-self: center;
+  border: 1px solid var(--theme-border);
+  background: var(--theme-surface);
+  color: var(--theme-text-dark);
+  border-radius: 999px;
+  padding: 8px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 48px;
+  font-family: $title-font;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--theme-accent);
+    color: var(--theme-accent);
+  }
+
+  @include mq(tabletp) {
+    margin-right: 0;
+    justify-self: end;
+    font-size: 13px;
   }
 }
