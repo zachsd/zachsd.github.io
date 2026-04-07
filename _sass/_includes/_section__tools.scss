@@ -148,12 +148,20 @@
     }
 
     h3 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       margin-bottom: 10px;
       font-size: 30px;
       line-height: 1.2;
       color: var(--card-title, #9fb4ff);
       position: relative;
       z-index: 1;
+
+      svg {
+        color: var(--card-headline, #d6ecff);
+        font-size: 22px;
+      }
     }
 
     p {
@@ -172,31 +180,13 @@
 
   @include mq(tabletp) {
     .skills-premium__grid {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      grid-auto-rows: minmax(220px, auto);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 22px;
     }
 
     .skill-card {
       padding: 32px;
-      min-height: 220px;
-    }
-
-    .skill-card:nth-child(1),
-    .skill-card:nth-child(9) {
-      grid-column: span 2;
-      grid-row: span 2;
-    }
-
-    .skill-card:nth-child(2),
-    .skill-card:nth-child(3),
-    .skill-card:nth-child(4),
-    .skill-card:nth-child(5),
-    .skill-card:nth-child(6),
-    .skill-card:nth-child(7),
-    .skill-card:nth-child(8) {
-      grid-column: span 2;
-      grid-row: span 1;
+      min-height: 240px;
     }
   }
 
