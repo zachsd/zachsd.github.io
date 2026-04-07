@@ -197,34 +197,16 @@ featured_image: /images/logo.png
 				<a href="{{ '/blog' | relative_url }}" class="action button--text--accent --right">All Experience</a>
 			</header>
 
-			{% assign timeline_colors = "#4C60E6,#7353EA,#9B45DE,#0FB9D8,#20C997,#F59E0B,#F97316,#EF4444" | split: "," %}
 			{% assign timeline_posts = site.posts | reverse %}
 			<div class="experience-timeline" role="list">
 				{% for post in timeline_posts %}
-					{% assign start_ts = post.start_date | date: "%s" | plus: 0 %}
-					{% assign end_source = post.end_date | default: site.time %}
-					{% assign end_ts = end_source | date: "%s" | plus: 0 %}
-					{% assign duration_days = end_ts | minus: start_ts | divided_by: 86400 %}
-					{% assign safe_days = duration_days | at_least: 1 %}
-					{% assign color_index = forloop.index0 | modulo: timeline_colors.size %}
-					{% assign current_color = timeline_colors[color_index] %}
-					{% assign next_index_raw = forloop.index0 | plus: 1 %}
-					{% assign next_index = next_index_raw | modulo: timeline_colors.size %}
-					{% assign next_color = timeline_colors[next_index] %}
 					{% assign row_index = forloop.index0 | modulo: 2 %}
-					{% if forloop.last %}
-						{% assign next_color = current_color %}
-					{% endif %}
-					<a href="{{ post.url | relative_url }}" class="experience-timeline__item {% if row_index == 0 %}is-top{% else %}is-bottom{% endif %}" role="listitem" style="--duration: {{ safe_days }}; --item-color: {{ current_color }}; --next-color: {{ next_color }};">
-						<span class="experience-timeline__segment" aria-hidden="true"></span>
+					<a href="{{ post.url | relative_url }}" class="experience-timeline__item {% if row_index == 0 %}is-left{% else %}is-right{% endif %}" role="listitem">
 						<span class="experience-timeline__dot" aria-hidden="true"></span>
 						<div class="experience-timeline__card">
 							<time class="experience-timeline__date label--small">{{ post.start_date | date: "%b %Y" }} - {% if post.end_date %}{{ post.end_date | date: "%b %Y" }}{% else %}Present{% endif %}</time>
-							<p class="experience-timeline__role experience-timeline__role--primary">{{ post.position }}</p>
-							<div class="experience-timeline__details">
-								<h5 class="experience-timeline__title subtitle">{{ post.title }}</h5>
-								<p class="experience-timeline__role">{{ post.position }}</p>
-							</div>
+							<h5 class="experience-timeline__title subtitle">{{ post.title }}</h5>
+							<p class="experience-timeline__role">{{ post.position }}</p>
 						</div>
 					</a>
 				{% endfor %}
