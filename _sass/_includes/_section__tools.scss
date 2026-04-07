@@ -65,10 +65,39 @@
     background: var(--theme-surface);
     color: var(--theme-text-dark);
     font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 
     svg {
       color: var(--theme-accent);
+      transition: color 0.25s ease;
       font-size: 16px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: linear-gradient(110deg, transparent 15%, rgba(255, 233, 161, 0.7) 48%, rgba(255, 243, 191, 0.92) 50%, rgba(255, 233, 161, 0.7) 52%, transparent 85%);
+      transform: translateX(-170%) skewX(-18deg);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    &:hover {
+      color: #ffe8ad;
+      border-color: rgba(255, 213, 105, 0.75);
+      box-shadow: 0 0 0 1px rgba(255, 213, 105, 0.3) inset;
+
+      svg {
+        color: #ffd569;
+      }
+
+      &::after {
+        opacity: 1;
+        animation: skill-shimmer 1.1s ease-out forwards;
+      }
     }
 
 
@@ -80,11 +109,6 @@
     }
 
 
-  }
-
-
-  .tools__row:hover .tools__track {
-    animation-play-state: paused;
   }
 
   @include mq(tabletp) {
@@ -138,6 +162,8 @@
     box-shadow: 0 12px 36px rgba(0, 0, 0, 0.22);
     position: relative;
     overflow: hidden;
+    --card-accent-active: var(--card-title, #9fb4ff);
+    --card-headline-active: var(--card-headline, #d6ecff);
 
     &::before {
       content: "";
@@ -147,6 +173,27 @@
       pointer-events: none;
     }
 
+    &::after {
+      content: "";
+      position: absolute;
+      inset: -35%;
+      background: linear-gradient(110deg, transparent 15%, rgba(255, 233, 161, 0.7) 48%, rgba(255, 243, 191, 0.92) 50%, rgba(255, 233, 161, 0.7) 52%, transparent 85%);
+      transform: translateX(-170%) skewX(-18deg);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    &:hover {
+      --card-accent-active: #ffd569;
+      --card-headline-active: #ffefbf;
+
+      &::after {
+        opacity: 1;
+        animation: skill-shimmer 1.1s ease-out forwards;
+      }
+    }
+
     h3 {
       display: flex;
       align-items: center;
@@ -154,12 +201,14 @@
       margin-bottom: 10px;
       font-size: 30px;
       line-height: 1.2;
-      color: var(--card-title, #9fb4ff);
+      color: var(--card-accent-active);
+      transition: color 0.25s ease;
       position: relative;
       z-index: 1;
 
       svg {
-        color: var(--card-headline, #d6ecff);
+        color: var(--card-headline-active);
+        transition: color 0.25s ease;
         font-size: 22px;
       }
     }
@@ -172,7 +221,8 @@
     }
 
     .skill-card__tools {
-      color: var(--card-headline, var(--theme-text-dark));
+      color: var(--card-headline-active);
+      transition: color 0.25s ease;
       font-weight: 600;
       margin-bottom: 10px;
     }
@@ -181,12 +231,21 @@
   @include mq(tabletp) {
     .skills-premium__grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-auto-flow: row dense;
       gap: 22px;
     }
 
     .skill-card {
       padding: 32px;
       min-height: 240px;
+    }
+
+    .skill-card--wide {
+      grid-column: span 2;
+    }
+
+    .skill-card--tall {
+      grid-row: span 2;
     }
   }
 
@@ -199,6 +258,15 @@
   .skill-card:nth-child(7) { --card-title: #9ff5ff; --card-headline: #dafbff; --card-glow: rgba(122, 238, 255, 0.2); }
   .skill-card:nth-child(8) { --card-title: #ffe08b; --card-headline: #fff1c6; --card-glow: rgba(255, 224, 139, 0.22); }
   .skill-card:nth-child(9) { --card-title: #ffb6b6; --card-headline: #ffdede; --card-glow: rgba(255, 140, 140, 0.2); }
+}
+
+@keyframes skill-shimmer {
+  0% {
+    transform: translateX(-170%) skewX(-18deg);
+  }
+  100% {
+    transform: translateX(170%) skewX(-18deg);
+  }
 }
 
 @keyframes tools-scroll-left {

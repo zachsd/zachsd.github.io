@@ -46,6 +46,7 @@ sass:
 
 plugins:
   - jekyll-sitemap
+  - jekyll-paginate
 
 paginate: 7
 paginate_path: "/blog/page-:num/"
