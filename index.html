@@ -199,13 +199,15 @@ featured_image: /images/logo.png
 
 			<div class="experience-timeline" role="list">
 				{% for post in site.posts %}
-				<a href="{{ post.url | relative_url }}" class="experience-timeline__item" role="listitem">
-					<span class="experience-timeline__marker" aria-hidden="true"></span>
-					<div class="experience-timeline__content">
+				<a href="{{ post.url | relative_url }}" class="experience-timeline__item {% if forloop.index0 | modulo: 2 == 0 %}is-top{% else %}is-bottom{% endif %}" role="listitem">
+					<div class="experience-timeline__card">
 						<time class="experience-timeline__date label--small">{{ post.start_date | date: "%B %Y" }} - {{ post.end_date | date: "%B %Y" }}</time>
 						<h5 class="experience-timeline__title subtitle">{{ post.title }}</h5>
 						<p class="experience-timeline__role">{{ post.position }}</p>
 					</div>
+					<span class="experience-timeline__connector" aria-hidden="true"></span>
+					<span class="experience-timeline__dot" aria-hidden="true"></span>
+					<span class="experience-timeline__year label--small">{{ post.start_date | date: "%Y" }}</span>
 				</a>
 				{% endfor %}
 			</div>
