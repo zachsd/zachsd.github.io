@@ -4,48 +4,36 @@
     {% endif %}
     <div class="wrap grid">
         <div class="about__image">
-            <img
-                id="profile-picture"
-                src="{{ '/images/profile.png' | relative_url }}"
-                alt="Profile Picture"
-            />
-
+            <img id="profile-picture" src="{{ '/images/profile.png' | relative_url }}" alt="Profile Picture"/>
             {% include component-socials.html %}
-
         </div>
 
         <div class="about__content">
-            <h2 class="title">Hello, I’m Zach, nice to meet you!</h2>
-            <p class="subtitle subtitle--light">
-                I’m a system architect with over 10 years of experience building
-                enterprise solutions.
+            <h2 class="title">Hello, I'm Zach</h2>
+            <p class="subtitle subtitle--light">I design and build platforms that power modern AI and cloud-native systems.</p>
+
+            <p>With 16+ years of experience across infrastructure, platform engineering, and distributed systems, I focus on delivering scalable, automated environments that enable teams to move faster while maintaining reliability, security, and performance. My work sits at the intersection of cloud architecture, Kubernetes, and AI infrastructure, with a strong emphasis on Infrastructure as Code, CI/CD, and GitOps.</p>
+
+            <p>In my current role, I architect and operate platforms across AWS and hybrid environments, building Terraform-driven infrastructure, Kubernetes-based systems (EKS/OpenShift), and standardized CI/CD pipelines across Azure DevOps, GitHub, and GitLab. I focus on creating internal developer platforms and “golden paths” that reduce friction, improve consistency, and accelerate delivery across engineering teams.</p>
+
+            <p>More recently, I've been focused on AI infrastructure, designing and running GPU-backed environments using NVIDIA DGX systems, optimizing LLM inference workloads, and building hybrid architectures that balance local and cloud-based execution. I'm particularly interested in how AI systems and platform engineering can converge to accelerate DevOps workflows and practices, driving intelligent automation, reducing operational overhead, and enabling faster, more reliable software and platform delivery.</p>
+
+            <p>Core areas of focus:</p>
+            <ul>
+                <li>AI Infrastructure & LLM Workloads (DGX, inference optimization, hybrid architectures)</li>
+                <li>Platform Engineering & Internal Developer Platforms</li>
+                <li>Terraform, Infrastructure as Code, and automation-first environments</li>
+                <li>CI/CD & GitOps (Azure DevOps, GitHub, GitLab)</li>
+                <li>Kubernetes (EKS, OpenShift) and distributed systems</li>
+                <li>Observability, reliability engineering, and system performance</li>
+            </ul>
+            <br />
+
+            <p>I enjoy working on complex systems, collaborating across teams, and turning ideas into production-ready platforms. I'm especially interested in opportunities where I can help design and scale next-generation AI infrastructure.</p>
+
+            <p>If you're working on AI platforms, distributed systems, or cloud-native infrastructure, I'm always open to connecting.</p>
             </p>
-            <p>
-                An accomplished Systems Architect actively working in the
-                industry since 2010. Tireless in designing comprehensive
-                enterprise solutions and development of infrastructure. 
-                Attentive collaborator and communicator from
-                project conception to completion. Seasoned team leader
-                possessing the technical and interpersonal skills to provide
-                exceptional project deliverables. Dedicated to continued
-                education with a true passion for the industry. Habitually
-                looking to expand current skills and learn new ones.
-            </p>
-            <p>
-                My skills include system design, site reliability engineering,
-                automation, root cause analysis, cloud and bare metal
-                infrastructure, infrastructure as code, and scripting. I’m
-                interested in clean aesthetics, resilient design, idempotent and
-                declarative platforms, orchestration, manageability, and efficient
-                infrastructure.
-            </p>
-            <p>
-                Looking for a system architect? I’d love to learn about your
-                company and current challenges, feel free to drop me some bits.
-            </p>
-            <a href="#" class="cta button--fill contact-trigger js-contact"
-                >Contact Me</a
-            >
+            <a href="#" class="cta button--fill contact-trigger js-contact">Contact Me</a>
         </div>
     </div>
 </section>
