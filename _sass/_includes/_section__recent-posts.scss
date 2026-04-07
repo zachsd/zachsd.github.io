@@ -19,136 +19,128 @@
   }
 
   .experience-timeline {
-    --dot-size: 22px;
-    --line-height: 4px;
     position: relative;
     display: flex;
-    gap: 24px;
     align-items: center;
-    overflow-x: auto;
-    padding: 120px 6px 120px;
     margin-bottom: 40px;
-    scroll-snap-type: x mandatory;
-
-    &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: calc(50% - (var(--line-height) / 2));
-      height: var(--line-height);
-      border-radius: 999px;
-      background: linear-gradient(90deg, rgba(76, 96, 230, 0.5), rgba(124, 91, 227, 0.7), rgba(76, 96, 230, 0.5));
-      background-size: 200% 100%;
-      animation: timeline-flow 8s linear infinite;
-    }
+    min-height: 320px;
   }
 
   .experience-timeline__item {
+    --timeline-center: 50%;
+    --line-thickness: 4px;
     position: relative;
-    min-width: 240px;
-    max-width: 240px;
+    flex: var(--duration) 1 0;
+    min-width: 0;
     display: block;
     color: inherit;
     text-decoration: none;
-    text-align: center;
-    scroll-snap-align: center;
 
     &:hover,
     &:focus {
       .experience-timeline__dot {
-        transform: translate(-50%, -50%) scale(1.12);
-        box-shadow: 0 0 0 6px rgba(76, 96, 230, 0.18);
+        transform: translate(-50%, -50%) scale(1.14);
+        box-shadow: 0 0 0 8px rgba(76, 96, 230, 0.2);
       }
 
       .experience-timeline__card {
-        border-color: rgba($accent-color, 0.55);
+        border-color: var(--item-color);
+        box-shadow: 0 16px 28px rgba(32, 34, 36, 0.14);
       }
     }
   }
 
-  .experience-timeline__card {
-    background: #fff;
-    border: 1px solid rgba($border-color, 0.8);
-    border-radius: 16px;
-    padding: 16px;
-    box-shadow: 0 12px 24px rgba(32, 34, 36, 0.08);
-    transition: border-color 0.2s ease;
-  }
-
-  .experience-timeline__connector {
+  .experience-timeline__segment {
     position: absolute;
-    left: 50%;
-    width: 2px;
-    height: 48px;
-    transform: translateX(-50%);
-    background: linear-gradient(180deg, rgba(76, 96, 230, 0.75), rgba(76, 96, 230, 0.25));
+    left: 0;
+    right: 0;
+    top: calc(var(--timeline-center) - (var(--line-thickness) / 2));
+    height: var(--line-thickness);
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--item-color) 0%, var(--item-color) 82%, var(--next-color) 100%);
+    z-index: 0;
   }
 
   .experience-timeline__dot {
     position: absolute;
     left: 50%;
-    top: 50%;
-    width: var(--dot-size);
-    height: var(--dot-size);
+    top: var(--timeline-center);
+    width: 22px;
+    height: 22px;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    background: radial-gradient(circle at 35% 35%, #fff, #9aa6ff 45%, #4c60e6 70%);
-    border: 2px solid #fff;
-    box-shadow: 0 0 0 4px rgba(76, 96, 230, 0.25);
+    background: #fff;
+    border: 5px solid var(--item-color);
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.9);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    z-index: 2;
+    z-index: 3;
   }
 
-  .experience-timeline__year {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    color: $text-medium-color;
+  .experience-timeline__card {
+    position: relative;
+    z-index: 2;
+    max-width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid color-mix(in srgb, var(--item-color) 45%, #d8deef);
+    background: linear-gradient(180deg, color-mix(in srgb, var(--item-color) 12%, #ffffff), #ffffff 68%);
+    box-shadow: 0 10px 22px rgba(32, 34, 36, 0.1);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
   }
 
   .experience-timeline__date {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
+    color: $text-medium-color;
   }
 
   .experience-timeline__title {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
 
   .experience-timeline__role {
     margin: 0;
     color: $text-medium-color;
+    font-size: 0.95em;
   }
 
   .experience-timeline__item.is-top {
     .experience-timeline__card {
-      margin-bottom: 92px;
-      animation: timeline-bob-top 5s ease-in-out infinite;
+      margin-bottom: 96px;
+      animation: timeline-bob-top 6s ease-in-out infinite;
     }
 
-    .experience-timeline__connector {
-      bottom: calc(50% + (var(--dot-size) / 2));
-    }
-
-    .experience-timeline__year {
-      top: calc(50% + 26px);
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: calc(var(--timeline-center) - 58px);
+      width: 2px;
+      height: 48px;
+      transform: translateX(-50%);
+      background: linear-gradient(180deg, color-mix(in srgb, var(--item-color) 65%, #fff), var(--item-color));
+      z-index: 1;
     }
   }
 
   .experience-timeline__item.is-bottom {
     .experience-timeline__card {
-      margin-top: 92px;
-      animation: timeline-bob-bottom 5s ease-in-out infinite;
+      margin-top: 96px;
+      animation: timeline-bob-bottom 6s ease-in-out infinite;
     }
 
-    .experience-timeline__connector {
-      top: calc(50% + (var(--dot-size) / 2));
-      background: linear-gradient(180deg, rgba(76, 96, 230, 0.25), rgba(76, 96, 230, 0.75));
-    }
-
-    .experience-timeline__year {
-      bottom: calc(50% + 26px);
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: calc(var(--timeline-center) + 10px);
+      width: 2px;
+      height: 48px;
+      transform: translateX(-50%);
+      background: linear-gradient(180deg, var(--item-color), color-mix(in srgb, var(--item-color) 65%, #fff));
+      z-index: 1;
     }
   }
 
@@ -168,25 +160,24 @@
       }
     }
 
-    .experience-timeline {
-      gap: 32px;
-      padding-left: 16px;
-      padding-right: 16px;
-    }
-
     .action-bottom {
       display: none;
     }
   }
-}
 
-@keyframes timeline-flow {
-  0% {
-    background-position: 0% 50%;
-  }
+  @media only screen and (max-width: #{$break-tabletp - 1}) {
+    .experience-timeline {
+      overflow-x: auto;
+      overflow-y: hidden;
+      min-height: 340px;
+      padding-bottom: 4px;
+      scroll-snap-type: x proximity;
 
-  100% {
-    background-position: 200% 50%;
+      .experience-timeline__item {
+        flex: 0 0 210px;
+        scroll-snap-align: center;
+      }
+    }
   }
 }
 
