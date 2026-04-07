@@ -190,16 +190,23 @@ featured_image: /images/logo.png
 
 	
 
-	<section class="recent-posts">
+	<section class="recent-posts" aria-labelledby="experience-title">
 		<div class="wrap grid">
 			<header class="recent-posts__header">
-				<h4>View my full work experience.</h4>
+				<h4 id="experience-title">Experience timeline</h4>
 				<a href="{{ '/blog' | relative_url }}" class="action button--text--accent --right">All Experience</a>
 			</header>
 
-			<div class="recent-posts__list grid">
-				{% for post in site.posts limit: 3 %}
-				{% include component__post-preview.html %}
+			<div class="experience-timeline" role="list">
+				{% for post in site.posts %}
+				<a href="{{ post.url | relative_url }}" class="experience-timeline__item" role="listitem">
+					<span class="experience-timeline__marker" aria-hidden="true"></span>
+					<div class="experience-timeline__content">
+						<time class="experience-timeline__date label--small">{{ post.start_date | date: "%B %Y" }} - {{ post.end_date | date: "%B %Y" }}</time>
+						<h5 class="experience-timeline__title subtitle">{{ post.title }}</h5>
+						<p class="experience-timeline__role">{{ post.position }}</p>
+					</div>
+				</a>
 				{% endfor %}
 			</div>
 

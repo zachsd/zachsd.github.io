@@ -9,7 +9,7 @@
   background-color: #f9f9fa;
 
   .recent-posts__header {
-    margin-bottom: 40px;
+    margin-bottom: 32px;
 
     .action {
       display: none;
@@ -18,11 +18,72 @@
     }
   }
 
-  .recent-posts__list {
-    width: 100%;
-    grid-template-columns: 1fr;
-    grid-gap: 56px;
-    margin-bottom: 48px;
+  .experience-timeline {
+    position: relative;
+    display: grid;
+    gap: 24px;
+    margin-bottom: 40px;
+    padding-left: 28px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: rgba(76, 96, 230, 0.3);
+    }
+  }
+
+  .experience-timeline__item {
+    position: relative;
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+
+    &:hover,
+    &:focus {
+      transform: translateX(6px);
+
+      .experience-timeline__title {
+        color: $accent-color;
+      }
+    }
+  }
+
+  .experience-timeline__marker {
+    position: absolute;
+    left: -28px;
+    top: 9px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid $accent-color;
+    box-shadow: 0 0 0 3px #f9f9fa;
+  }
+
+  .experience-timeline__content {
+    padding: 16px 18px;
+    background: #fff;
+    border: 1px solid rgba($border-color, 0.6);
+    border-radius: 12px;
+  }
+
+  .experience-timeline__date {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .experience-timeline__title {
+    margin-bottom: 8px;
+  }
+
+  .experience-timeline__role {
+    margin: 0;
+    color: $text-medium-color;
   }
 
   .action-bottom {
@@ -43,23 +104,13 @@
       }
     }
 
-    .recent-posts__list {
-      grid-gap: 30px;
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    .post__image {
-      height: 180px;
+    .experience-timeline {
+      gap: 18px;
+      padding-left: 32px;
     }
 
     .action-bottom {
       display: none;
-    }
-  }
-
-  @include mq(tabletl) {
-    .post__image {
-      height: 250px;
     }
   }
 }
