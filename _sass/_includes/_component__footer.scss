@@ -67,7 +67,7 @@
 	}
 
 	.code-terminal {
-		width: 760px;
+		width: 820px;
 		max-width: 100%;
 		margin: 0 0 14px auto;
 		border-radius: 16px;
@@ -117,15 +117,18 @@
 
 	.code-terminal__screen {
 		padding: 14px 16px;
-		height: 230px;
+		height: 320px;
 		overflow: auto;
 		color: #cde9ff;
-		font-size: 15px;
+		font-size: 14px;
 		line-height: 1.4;
+		font-variant-ligatures: none;
 	}
 
 	.code-terminal__line {
 		white-space: pre;
+		width: max-content;
+		min-width: 100%;
 	}
 
 	.code-terminal__line--prompt {
@@ -136,27 +139,39 @@
 		color: #ffd37e;
 	}
 
-	.token-keyword {
+	.code-terminal__line--title {
 		color: #7ac7ff;
+		font-weight: 700;
 	}
 
-	.token-type {
-		color: #b6a7ff;
+	.code-terminal__line--muted {
+		color: rgba(210, 220, 235, 0.72);
 	}
 
-	.token-string {
+	.terminal-label {
+		color: #8ec6ff;
+	}
+
+	.terminal-bar {
 		color: #8ce6a4;
 	}
 
-	.token-number {
+	.terminal-status {
+		font-weight: 700;
+	}
+
+	.terminal-status--good {
+		color: #8ce6a4;
+	}
+
+	.terminal-status--warn {
 		color: #ffd780;
 	}
 
-	.token-comment {
-		color: rgba(210, 220, 235, 0.66);
-		font-style: italic;
+	.terminal-status--bad {
+		color: #ff9aa9;
 	}
 
-	.token-variable {
-		color: #ffb1de;
+	.terminal-status--paused {
+		color: #b6a7ff;
 	}
