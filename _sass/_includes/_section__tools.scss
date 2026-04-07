@@ -190,20 +190,6 @@
       min-height: 210px;
     }
 
-    // Wide cards (2x width, normal height)
-    .skill-card:nth-child(1),
-    .skill-card:nth-child(5),
-    .skill-card:nth-child(8) {
-      grid-column: span 2;
-      grid-row: span 1;
-    }
-
-    // Tall cards (2x height, normal width)
-    .skill-card:nth-child(3),
-    .skill-card:nth-child(7) {
-      grid-column: span 1;
-      grid-row: span 2;
-    }
   }
 
   .skill-card:nth-child(1) { --card-title: #9fd2ff; --card-headline: #d6ecff; --card-glow: rgba(83, 200, 255, 0.22); }
