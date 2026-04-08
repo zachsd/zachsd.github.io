@@ -1,0 +1,4 @@
+OPENROUTER_API_KEY=sk-or-v1-replace-me
+PUBLIC_SITE_URL=https://zachdavis.org
+SITE_TITLE=Zach Davis Portfolio AI Lab
+ALLOWED_ORIGINS=https://zachdavis.org,https://www.zachdavis.org,http://localhost:4000

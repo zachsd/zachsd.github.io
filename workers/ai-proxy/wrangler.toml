@@ -1,0 +1,15 @@
+name = "zachdavis-ai-proxy"
+main = "src/index.js"
+compatibility_date = "2026-04-07"
+
+[observability]
+enabled = true
+
+routes = [
+  { pattern = "api.zachdavis.org", custom_domain = true }
+]
+
+[vars]
+PUBLIC_SITE_URL = "https://zachdavis.org"
+SITE_TITLE = "Zach Davis Portfolio AI Lab"
+ALLOWED_ORIGINS = "https://zachdavis.org,https://www.zachdavis.org,http://localhost:4000"

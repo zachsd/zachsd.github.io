@@ -1,0 +1,92 @@
+<section id="ai-lab" class="ai-lab" aria-labelledby="ai-lab-title">
+    <div class="wrap">
+        <div class="ai-lab__grid">
+            <div class="ai-lab__intro">
+                <p class="label">AI Lab</p>
+                <h2 id="ai-lab-title">A live AI demo that fits the portfolio instead of fighting it.</h2>
+                <p class="ai-lab__lede">Route requests through a secured Cloudflare Worker, use current free models, and try prompts tuned for portfolio questions and platform strategy.</p>
+
+                <div class="ai-lab__points" role="list" aria-label="AI Lab capabilities">
+                    <div class="ai-lab__point" role="listitem">
+                        <span class="ai-lab__point-kicker">Mode 01</span>
+                        <h3>Portfolio guide</h3>
+                        <p>Answer questions about experience, infrastructure focus, and the type of work this site represents.</p>
+                    </div>
+                    <div class="ai-lab__point" role="listitem">
+                        <span class="ai-lab__point-kicker">Mode 02</span>
+                        <h3>Platform strategist</h3>
+                        <p>Generate concise architecture ideas, rollout plans, and modernization guidance in the same operating lane.</p>
+                    </div>
+                </div>
+
+                <div class="ai-lab__meta" role="list" aria-label="Implementation notes">
+                    <span class="ai-lab__meta-chip" role="listitem">Static-site friendly</span>
+                    <span class="ai-lab__meta-chip" role="listitem">Current free-model catalog</span>
+                    <span class="ai-lab__meta-chip" role="listitem">Cloudflare Worker proxy</span>
+                </div>
+            </div>
+
+            <div class="ai-lab__workspace">
+                <form id="ai-lab-form" class="ai-lab__form" novalidate>
+                    <label class="ai-lab__field">
+                        <span class="ai-lab__field-label">Execution path</span>
+                        <div class="ai-lab__proxy-banner">
+                            <strong>api.zachdavis.org</strong>
+                            <span>Requests are routed through a Cloudflare Worker that keeps the OpenRouter key server-side.</span>
+                        </div>
+                        <span class="ai-lab__field-note">The browser sends only the selected mode, model, and prompt. No visitor-managed secret is required.</span>
+                    </label>
+
+                    <div class="ai-lab__row">
+                        <label class="ai-lab__field">
+                            <span class="ai-lab__field-label">Mode</span>
+                            <select id="ai-lab-mode" name="mode">
+                                <option value="portfolio">Portfolio guide</option>
+                                <option value="platform">Platform strategist</option>
+                            </select>
+                        </label>
+
+                        <label class="ai-lab__field">
+                            <span class="ai-lab__field-label">Model</span>
+                            <select id="ai-lab-model" name="model">
+                                <option value="openrouter/free">openrouter/free</option>
+                            </select>
+                            <span id="ai-lab-model-note" class="ai-lab__field-note">Loading current free models from the Cloudflare proxy...</span>
+                        </label>
+                    </div>
+
+                    <label class="ai-lab__field">
+                        <span class="ai-lab__field-label">Prompt</span>
+                        <textarea id="ai-lab-prompt" name="prompt" rows="5" placeholder="Ask about experience, request an architecture outline, or generate a concise technical pitch."></textarea>
+                    </label>
+
+                    <div class="ai-lab__presets" aria-label="Suggested prompts">
+                        <button type="button" class="ai-lab__preset" data-ai-mode="portfolio" data-ai-prompt="Summarize Zach's experience for a hiring manager who needs AI platform and cloud infrastructure leadership.">Summarize experience</button>
+                        <button type="button" class="ai-lab__preset" data-ai-mode="platform" data-ai-prompt="Draft a phased modernization plan for a hybrid enterprise platform moving toward Kubernetes, Terraform, and GPU-backed AI workloads.">Draft modernization plan</button>
+                        <button type="button" class="ai-lab__preset" data-ai-mode="portfolio" data-ai-prompt="List five strong conversation starters a CTO could use when evaluating Zach for platform engineering or AI infrastructure work.">Generate interview prompts</button>
+                    </div>
+
+                    <div class="ai-lab__actions">
+                        <button id="ai-lab-submit" type="submit" class="button--fill">Run AI Demo</button>
+                        <p class="ai-lab__disclaimer">This demo now assumes a secured Worker proxy with request validation, origin checks, and a server-side OpenRouter key.</p>
+                    </div>
+                </form>
+
+                <section class="ai-lab__console" aria-labelledby="ai-lab-console-title">
+                    <div class="ai-lab__console-bar">
+                        <div class="ai-lab__console-lights" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <p id="ai-lab-console-title">Live response</p>
+                        <span id="ai-lab-model-badge" class="ai-lab__model-badge">openrouter/free</span>
+                    </div>
+
+                    <p id="ai-lab-status" class="ai-lab__status">Enter a prompt or use one of the presets to run a live example.</p>
+                    <pre id="ai-lab-output" class="ai-lab__output">This workspace combines portfolio context with live inference so visitors can test a practical AI interaction directly on the site.</pre>
+                </section>
+            </div>
+        </div>
+    </div>
+</section>

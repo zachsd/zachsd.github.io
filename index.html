@@ -1,8 +1,8 @@
 ---
 layout: default
-overtitle: Building enterprise infrastructure, for work and fun. 
-title: Zachary S. Davis, System Architect
-description: 
+overtitle: Builder of platforms, pipelines, and AI delivery systems that power modern applications and cloud infrastructure across industries.
+title: Zachary Davis 
+description:  AI Engineer, Platform Engineer & Cloud Architect
 featured_image: /images/logo.png
 ---
 
@@ -12,16 +12,17 @@ featured_image: /images/logo.png
 			<div class="title">
 				<p class="subtitle">{{ page.overtitle }}</p>
 				<h1>{{ page.title }}</h1>
+				
+				<p class="intro subtitle--light">
+					{{ page.description }}
+					<a href="#" class="hero__cta button--fill contact-trigger js-contact">Contact Me</a>
+				</p>
 			</div>
-
-			<p class="intro subtitle--light">
-				{{ page.description }}
-				<a href="#" class="hero__cta button--fill contact-trigger js-contact">Contact Me</a>
-			</p>
 		</div>
 	</section>
 
 	{% include section__about.html %}
+	{% include section__ai-lab.html %}
 
 	<section class="tools" aria-labelledby="tools-title">
 		<div class="wrap">
