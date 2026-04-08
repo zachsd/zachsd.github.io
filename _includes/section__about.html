@@ -2,13 +2,13 @@
     {% if include.divider == true %}
     <div class="wrap"><hr /></div>
     {% endif %}
-    <div class="wrap grid">
-        <div class="about__image">
-            <img id="profile-picture" src="{{ '/images/profile.png' | relative_url }}" alt="Profile Picture"/>
-            {% include component-socials.html %}
-        </div>
-
+    <div class="wrap">
         <div class="about__content">
+            <div class="about__image">
+                <img id="profile-picture" src="{{ '/images/profile.png' | relative_url }}" alt="Profile Picture"/>
+                {% include component-socials.html %}
+            </div>
+
             <h2 class="title">Hello, I'm Zach</h2>
             <p class="subtitle subtitle--light">I design and build platforms that power modern AI and cloud-native systems.</p>
 
@@ -32,7 +32,6 @@
             <p>I enjoy working on complex systems, collaborating across teams, and turning ideas into production-ready platforms. I'm especially interested in opportunities where I can help design and scale next-generation AI infrastructure.</p>
 
             <p>If you're working on AI platforms, distributed systems, or cloud-native infrastructure, I'm always open to connecting.</p>
-            </p>
             <a href="#" class="cta button--fill contact-trigger js-contact">Contact Me</a>
         </div>
     </div>
